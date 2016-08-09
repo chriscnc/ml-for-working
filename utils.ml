@@ -1,3 +1,4 @@
+(*
 module type IUtils = 
   sig
     (* return the last elem of a list *)
@@ -19,7 +20,7 @@ module type IUtils =
 
 module Utils : IUtils = 
   struct
-
+*)
     let last lst = List.hd (List.rev lst)
 
 
@@ -52,8 +53,10 @@ module Utils : IUtils =
         | x::xs -> Bytes.set res i x; f (i + 1) xs
       in
       f 0 l
+        (*
   end
 
+           *)
 
 
 
