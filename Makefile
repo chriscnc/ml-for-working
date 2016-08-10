@@ -1,4 +1,3 @@
-
 OCB_FLAGS = -tag bin_annot
 OCB = ocamlbuild $(OCB_FLAGS)
 
