@@ -1,6 +1,6 @@
-type 'a tree = 
+type 'a t = 
     Lf
-  | Br of 'a * 'a tree * 'a tree
+  | Br of 'a * 'a t * 'a t
 
 let rec size = function
     Lf          -> 0

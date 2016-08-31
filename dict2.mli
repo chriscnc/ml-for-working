@@ -1,5 +1,5 @@
 type key = string
-type 'a t = (key * 'a) Tree.t
+type 'a t = (key * 'a) list
 exception E of key
 val empty  : 'a t
 val lookup : 'a t -> key -> 'a
