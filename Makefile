@@ -1,7 +1,7 @@
 OCB_FLAGS = -tag bin_annot
 OCB = ocamlbuild $(OCB_FLAGS)
 
-all: tautology
+all: ch5
 
 clean:
 	$(OCB) -clean
@@ -26,7 +26,12 @@ tautology:
 	$(OCB) tautology_test.native
 	$(OCB) tautology_test.byte
 
-test: test_tautology 
+ch5:
+	$(OCB) ch5.native
+	$(OCB) ch5_test.native
+
+
+test: test_ch5
 
 test_utils: utils
 	./utils_test.native 
@@ -42,6 +47,9 @@ test_dict2: dict
 
 test_tautology: tautology
 	./tautology_test.native
+
+test_ch5: ch5
+	./ch5_test.native
 
 .PHONY: all clean byte native profile debug test
 
