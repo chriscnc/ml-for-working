@@ -1,23 +1,4 @@
-
-let reverse ls = 
-  let rec reverse_acc ls acc = match ls with
-      [] -> acc
-    | x::xs -> (reverse_acc xs (x::acc))
-  in
-  reverse_acc ls []
-
-let rec take ls k = match ls with
-    [] -> []
-  | x::xs -> 
-    if k > 0 then x::(take xs (k - 1))
-    else []
-
-let rec drop ls k = match ls with
-    [] -> []
-  | x::xs ->
-    if k > 0 then (drop xs (k - 1))
-    else ls
-
+open Utils
 
 let rec merge_sort ls less_eq_op = match ls with 
     []  -> []

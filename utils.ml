@@ -1,17 +1,19 @@
 
 let last lst = List.hd (List.rev lst)
 
-let rec take lst n = match lst with
+let rec take ls k = match ls with
     [] -> []
   | x::xs -> 
-    if n > 0 then x::(take xs (n-1))
+    if k > 0 then x::(take xs (k - 1))
     else []
 
-let rec drop lst n = match lst with
+
+let rec drop ls k = match ls with
     [] -> []
   | x::xs ->
-    if n > 0 then (drop xs (n-1))
-    else lst
+    if k > 0 then (drop xs (k - 1))
+    else ls
+
 
 let explode (s : string) = 
   let rec f i acc = 
@@ -19,6 +21,7 @@ let explode (s : string) =
     else acc
   in
   f (String.length s) []
+
 
 let implode (l : char list) =
   let res = Bytes.make (List.length l) ' ' in
@@ -28,3 +31,10 @@ let implode (l : char list) =
   in
   f 0 l
 
+
+let reverse ls = 
+  let rec reverse_acc ls acc = match ls with
+      [] -> acc
+    | x::xs -> (reverse_acc xs (x::acc))
+  in
+  reverse_acc ls []

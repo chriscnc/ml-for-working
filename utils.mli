@@ -13,3 +13,6 @@ val explode : string -> char list
 
 (* convert a list of chars to a string *)
 val implode : char list -> string
+
+(* reverse a list *)
+val reverse : 'a list -> 'a list
